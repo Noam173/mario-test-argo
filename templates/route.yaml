@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1 
+kind: Route 
+metadata: 
+  name: mario-direct 
+  namespace: infra-openshift 
+spec: 
+  to: 
+    kind: Service 
+    name: mario-direct 
+    weight: 100 
+  port: 
+    targetPort: 80 

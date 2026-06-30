@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: mario-direct 
+  namespace: infra-openshift 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: mario-direct 
+  template: 
+    metadata: 
+      labels: 
+        app: mario-direct 
+    spec: 
+      containers: 
+      - name: mario 
+        image: sevenajay/mario 
+        ports: 
+        - containerPort: 80 
